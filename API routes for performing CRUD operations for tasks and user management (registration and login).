@@ -1,0 +1,17 @@
+const express = require('express');
+const router = express.Router();
+
+// Import necessary controllers and middleware.
+
+// User Management Routes
+router.post('/register', userController.register); // User registration
+router.post('/login', userController.login);       // User login
+
+// Task Management Routes
+router.post('/tasks', authenticateMiddleware, taskController.create);       // Create a new task
+router.get('/tasks', authenticateMiddleware, taskController.getAll);        // Get all tasks for a user
+router.get('/tasks/:taskId', authenticateMiddleware, taskController.getOne); // Get a specific task by ID
+router.put('/tasks/:taskId', authenticateMiddleware, taskController.update); // Update a task by ID
+router.delete('/tasks/:taskId', authenticateMiddleware, taskController.delete); // Delete a task by ID
+
+module.exports = router;
