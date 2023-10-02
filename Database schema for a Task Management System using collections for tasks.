@@ -1,0 +1,8 @@
+{
+  "_id": ObjectId("task_id"),
+  "title": "Task Title",
+  "description": "Task Description",
+  "dueDate": ISODate("due_date"),
+  "assignedTo": ObjectId("user_id"),
+  "createdAt": ISODate("timestamp")
+}
